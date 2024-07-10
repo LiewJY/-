@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit + TS</title>
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="/src/ori/my-element.ts"></script>
+  </head>
+  <body>
+    <div class="container">
+
+      <my-element></my-element>
+
+      <!--UNCOMMENT TO SEE Multiple ELEMENTS SHARE CONTEXT WITH THEIR CHILDREN BUT NOT EACH OTHER-->
+      <!-- <my-element></my-element> -->
+      <!--   <my-element></my-element> -->
+      <!--   <my-element></my-element> -->
+      <!--   <my-element></my-element> -->
+    </div>
+    <my-grandchild>
+      Second Grandchild Component - But this one isn't in the my-element dom
+      tree so it cannot subscribe to events that it is trying to consume, even
+      though this component is setup to consume from that context.
+    </my-grandchild>
+  </body>
+</html>
